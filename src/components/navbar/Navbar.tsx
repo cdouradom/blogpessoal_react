@@ -5,7 +5,7 @@ function Navbar() {
 
     const navigate = useNavigate();
 
-    const { handleLogout } = useContext(AuthContext)
+    const {handleLogout} = useContext(AuthContext); 
 
     function logout() {
 
@@ -23,10 +23,10 @@ function Navbar() {
                
                 <div className="flex gap-4">
                     <div className="hover:underline">Postagens</div>
-                    <div className="hover:underline">Temas</div>
-                    <div className="hover:underline">Cadastrar temas</div>
+                    <Link to='/temas' className="hover:underline">Temas</Link>
+                    <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
                     <div className="hover:underline">Perfil</div>
-                    <Link to='' onClick={logout} className="hover:underline uppercase">Sair</Link>                    
+                    <Link to='' onClick={logout} className="hover:underline uppercase">Sair</Link>
                     
                 </div>
             </div>

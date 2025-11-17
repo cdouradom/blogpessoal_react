@@ -32,8 +32,7 @@ function Login() {
 console.log(JSON.stringify(usuarioLogin));
 
   return (
-    <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
         <form className="flex justify-center items-center flex-col w-1/2 gap-4"
           onSubmit={login}
         >
@@ -67,18 +66,12 @@ console.log(JSON.stringify(usuarioLogin));
             className="rounded bg-indigo-400 flex justify-center
                     hover:bg-indigo-900 text-white w-1/2 py-2"
           >
-            {
-              isLoading ?
-
-                <ClipLoader
-                  color="#ffffff"
-                  size={24}
-                />
-
-                :
-
+            { isLoading ?
+              <ClipLoader
+                color="#ffffff"
+                size={24}
+              /> :
                 <span>Entrar</span>
-
             }
           </button>
 
@@ -96,7 +89,6 @@ className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-rep
                             w-full min-h-screen bg-cover bg-center"
         ></div>
       </div>
-    </>
   )
 }
 
