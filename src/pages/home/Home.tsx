@@ -1,4 +1,5 @@
-import React from "react"
+import ListaPostagens from "../../components/tema/listatemas/ListaTemas"
+import ModalPostagem from "../../components/postagem/modalpostagem/ModalPostagem"
 function Home() {
 return (
     <>
@@ -17,10 +18,7 @@ return (
 
                     {/* Guardando lugar para Link/Botão */}
                     <div className="flex justify-around gap-4" >
-                        <div  className="rounded text-white border-white border-solid border-2 py-2 px-8"
-                            >
-                            Nova Postagem
-                        </div>
+                        <ModalPostagem />
                     </div>
                 </div>
 
@@ -34,6 +32,8 @@ return (
                 </div>
             </div>
         </div>
+
+         <ListaPostagens />
     </>
     )
 }
