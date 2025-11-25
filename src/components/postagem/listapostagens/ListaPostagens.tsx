@@ -19,7 +19,7 @@ function ListaPostagens() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            ToastAlert('Você precisa estar logado!')
             navigate('/')
         }
     }, [token])

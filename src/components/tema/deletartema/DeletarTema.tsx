@@ -33,7 +33,7 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado.');
+            ToastAlert('Você precisa estar logado.');
             navigate('/');
         }
     }, [token]);
@@ -48,12 +48,12 @@ function DeletarTema() {
             await deletar(`/temas/${id}`, {
                 headers: { Authorization: token }
             });
-            alert('Tema deletado com sucesso.');
+            ToastAlert('Tema deletado com sucesso.');
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout();
             } else {
-                alert('Erro ao deletar o tema!');
+                ToastAlert('Erro ao deletar o tema!');
             }
         }
 

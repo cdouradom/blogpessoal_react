@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import type Postagem from "../../../models/Postagem"
 import { buscar, deletar } from "../../../services/Service"
 import { ClipLoader } from "react-spinners"
+import { ToastAlert } from "../../../utils/ToastAlert";
 
 function DeletarPostagem() {
 
@@ -33,7 +34,7 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlert('Você precisa estar logado', 'info')
             navigate('/')
         }
     }, [token])
@@ -54,13 +55,13 @@ function DeletarPostagem() {
                 }
             })
 
-            alert('Postagem apagada com sucesso')
+            ToastAlert('Postagem apagada com sucesso')
 
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar a postagem.')
+                ToastAlert('Erro ao deletar a postagem.')
             }
         }
 
