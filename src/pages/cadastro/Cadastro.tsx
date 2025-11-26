@@ -3,6 +3,7 @@ import type Usuario from "../../models/Usuario";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { cadastrarUsuario } from "../../services/Service";
+import { ToastAlert } from "../../utils/ToastAlert";
 
 function Cadastro() {
 
@@ -55,15 +56,15 @@ function Cadastro() {
       try{
 
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        ToastAlert('Usuario cadastrado com sucesso!');
+        ToastAlert('Usuario cadastrado com sucesso!', 'success');
 
       }catch(error){
-        ToastAlert('Erro ao cadastrar o usuario');
+        ToastAlert('Erro ao cadastrar o usuario', 'error');
 
       }
 
     }else{
-      ToastAlert("Dados do usuario inconsistentes! Verifique as informacoes do cadastro.");
+      ToastAlert("Dados do usuario inconsistentes! Verifique as informacoes do cadastro.", 'info');
       setUsuario({
         ...usuario,
         senha: ''
@@ -89,8 +90,8 @@ function Cadastro() {
         <form className='flex justify-center items-center flex-col w-2/3 gap-3'
           onSubmit={cadastrarNovoUsuario}
         >
-          <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
-          <div className="flex flex-col w-full">
+          <h2 className='text-fuchsia-900 text-5xl'>Cadastrar</h2>
+          <div className="flex text-fuchsia-950 flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input
               type="text"
@@ -102,7 +103,7 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement> )=> atualizarEstado(e)}
             />
           </div>
-          <div className="flex flex-col w-full">
+          <div className="flex text-fuchsia-950 flex-col w-full">
             <label htmlFor="usuario">Usuario</label>
             <input
               type="text"
@@ -114,7 +115,7 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement> )=> atualizarEstado(e)}
             />
           </div>
-          <div className="flex flex-col w-full">
+          <div className="flex text-fuchsia-950 flex-col w-full">
             <label htmlFor="foto">Foto</label>
             <input
               type="text"
@@ -126,7 +127,7 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement> )=> atualizarEstado(e)}
             />
           </div>
-          <div className="flex flex-col w-full">
+          <div className="flex text-fuchsia-950 flex-col w-full">
             <label htmlFor="senha">Senha</label>
             <input
               type="password"
@@ -138,7 +139,7 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement> )=> atualizarEstado(e)}
             />
           </div>
-          <div className="flex flex-col w-full">
+          <div className="flex text-fuchsia-950 flex-col w-full">
             <label htmlFor="confirmarSenha">Confirmar Senha</label>
             <input
               type="password"
@@ -150,18 +151,18 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
             />
           </div>
-          <div className="flex justify-around w-full gap-8">
+          <div className="flex text-fuchsia-950 justify-around w-full gap-8">
             <button 
                 type='reset'
-                className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2'
+                className='rounded text-white bg-red-400 hover:bg-red-500 w-1/2 py-2'
                 onClick={retornar}
              >
                 Cancelar
             </button>
             <button 
                 type='submit'
-                className='rounded text-white bg-indigo-400
-                           hover:bg-indigo-900 w-1/2 py-2
+                className='rounded text-white bg-fuchsia-950
+                           hover:bg-fuchsia-900 w-1/2 py-2
                            flex justify-center'
                 >
                   { isLoading ?

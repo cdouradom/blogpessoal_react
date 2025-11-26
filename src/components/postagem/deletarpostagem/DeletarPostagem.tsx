@@ -55,13 +55,13 @@ function DeletarPostagem() {
                 }
             })
 
-            ToastAlert('Postagem apagada com sucesso')
+            ToastAlert('Postagem apagada com sucesso', 'success')
 
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
             }else {
-                ToastAlert('Erro ao deletar a postagem.')
+                ToastAlert('Erro ao deletar a postagem.', 'error')
             }
         }
 

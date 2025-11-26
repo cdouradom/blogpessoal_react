@@ -1,11 +1,11 @@
-import ListaPostagens from "../../components/tema/listatemas/ListaTemas"
+import ListaPostagens from "../../components/postagem/listapostagens/ListaPostagens"
 import ModalPostagem from "../../components/postagem/modalpostagem/ModalPostagem"
 function Home() {
 return (
     <>
         {/*Código do componente por HTML
         // Essa div é o container geral da página */}
-        <div className="bg-indigo-900 flex justify-center" >
+        <div className="bg-fuchsia-950  flex justify-center" >
             {/* Divide a tela em 2 colunas */}
             <div className="container grid grid-cols-1 sm:grid-cols-2 text-white" >
                 {/* 1° coluna, da esquerda */}

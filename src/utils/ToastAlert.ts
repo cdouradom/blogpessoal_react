@@ -5,7 +5,7 @@ export function ToastAlert(mensagem: string, tipo: string) {
         case 'sucesso':
             toast.success(mensagem, {
                 position: 'top-right',
-                autoClose: 2000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -18,7 +18,7 @@ export function ToastAlert(mensagem: string, tipo: string) {
         case 'erro':
             toast.error(mensagem, {
                 position: 'top-right',
-                autoClose: 2000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -32,7 +32,7 @@ export function ToastAlert(mensagem: string, tipo: string) {
             default:
             toast.info(mensagem, {
                 position: 'top-right',
-                autoClose: 2000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,

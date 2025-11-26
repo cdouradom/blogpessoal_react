@@ -19,13 +19,12 @@ function Navbar() {
 
     if (usuario.token !== "") {
         component = (
-            <div className="w-full flex justify-center pt-4
-                    bg-indigo-950 text-white" >
+            <div className="w-full flex justify-center pt-10 bg-fuchsia-950 text-white border-b border-fuchsia-300" >
 
-                <div className="container flex justify-between text-lg mx-8">
-                    <Link to="/home" className="text-2x1 font-bold uppercase">Blog Pessoal </Link>
+                <div className="container flex justify-between text-lg mx-6">
+                    <Link to="/home" className="text-2xl font-bold uppercase">Blog Pessoal </Link>
                 
-                    <div className="flex gap-4">
+                    <div className="flex gap-6">
                         <Link to='/postagens' className='hover:underline'>Postagens</Link>
                         <Link to='/temas' className="hover:underline">Temas</Link>
                         <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
