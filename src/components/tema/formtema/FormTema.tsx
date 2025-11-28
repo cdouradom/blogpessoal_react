@@ -88,13 +88,13 @@ function FormTema() {
 
     return (
         <div className="container flex flex-col items-center justify-center mx-auto">
-            <h1 className="text-4xl text-center my-8">{id === undefined ? 'Cadastrar' : 'Atualizar'} Tema</h1>
+            <h1 className="text-4xl text-center text-fuchsia-900 my-8">{id === undefined ? 'Cadastrar' : 'Atualizar'} Tema</h1>
             <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
-                <div className="flex flex-col gap-2">
+                <div className="flex text-fuchsia-900  flex-col gap-2">
                     <label htmlFor="descricao">Descrição do Tema</label>
-                    <input type="text" placeholder="Descreva seu tema" name="descricao" className="border-2 border-slate-700 rounded p-2" value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+                    <input type="text" placeholder="Descreva seu tema" name="descricao" className="border-2 border-fuchsia-900 rounded p-2" value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
                 </div>
-                <button className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center" type="submit">
+                <button className="rounded text-slate-100  bg-gradient-to-r from-rose-300 to-fuchsia-800 hover:from-fuchsia-800 hover:to-rose-300 shadow-lg hover:shadow-xl transition-all w-1/2 py-2 mx-auto flex justify-center" type="submit">
                     {
                         isLoading ?
                             <ClipLoader

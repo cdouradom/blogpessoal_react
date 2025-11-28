@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { cadastrarUsuario } from "../../services/Service";
 import { ToastAlert } from "../../utils/ToastAlert";
+import minhaImagem from "../../assets/homeblog2.png"
 
 function Cadastro() {
 
@@ -81,11 +82,10 @@ function Cadastro() {
   console.log(confirmarSenha);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen
-            place-items-center font-bold">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-rose-50">
         <div
-          className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat
-                    w-full min-h-screen bg-cover bg-center"
+          style={{ backgroundImage: `url(${minhaImagem})` }}
+          className="lg:block hidden bg-no-repeat w-full min-h-screen bg-cover bg-center"
         ></div>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3'
           onSubmit={cadastrarNovoUsuario}
@@ -154,15 +154,14 @@ function Cadastro() {
           <div className="flex text-fuchsia-950 justify-around w-full gap-8">
             <button 
                 type='reset'
-                className='rounded text-white bg-red-400 hover:bg-red-500 w-1/2 py-2'
+                className='rounded text-white bg-rose-500 hover:bg-rose-400 w-1/2 py-2'
                 onClick={retornar}
              >
                 Cancelar
             </button>
             <button 
                 type='submit'
-                className='rounded text-white bg-fuchsia-950
-                           hover:bg-fuchsia-900 w-1/2 py-2
+                className='rounded text-white bg-fuchsia-950 hover:bg-fuchsia-800 w-1/2 py-2
                            flex justify-center'
                 >
                   { isLoading ?

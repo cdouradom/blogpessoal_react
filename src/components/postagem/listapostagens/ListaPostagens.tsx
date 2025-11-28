@@ -52,23 +52,23 @@ function ListaPostagens() {
             {isLoading && (
                 <div className="flex justify-center w-full my-8">
                     <SyncLoader
-                        color="#FF69B4"
-                        size={32}
+                        color="#c9747c"
+                        size={24}
                     />
                 </div>
             )}
 
-            <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col">
+            <div className="flex bg-rose-50 justify-center w-full my-4">
+                <div className="container bg-rose-50 flex flex-col">
 
                     {(!isLoading && postagens.length === 0) && (
-                            <span className="text-3xl text-center my-8">
+                            <span className="text-3xl bg-rose-50 text-center my-8">
                                 Nenhuma Postagem foi encontrada!
                             </span>
                     )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 
-                                    lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 bg-rose-50 md:grid-cols-2 
+                                    lg:grid-cols-3 gap-4">
                             {
                                 postagens.map((postagem) => (
                                     <CardPostagem key={postagem.id} postagem={postagem}/>

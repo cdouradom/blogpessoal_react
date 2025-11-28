@@ -112,10 +112,11 @@ function AtualizarPerfil() {
 	return (
 		<div className="min-h-screen bg-linear-to-br from-sky-50 to-indigo-100 py-12 px-4">
 			<div className="container mx-auto max-w-7xl">
-				<div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+				<div className="bg-rose-50 rounded-3xl shadow-2xl overflow-hidden">
 					<div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr]">
 						{/* Seção da foto */}
-						<div className="bg-linear-to-br from-sky-400 via-sky-500 to-indigo-500 p-8 flex flex-col items-center justify-center">
+						<div className="bg-gradient-to-br from-fuchsia-900 via-rose-600 to-rose-200 
+                            p-8 flex flex-col items-center justify-center text-pink-100">
 							<div className="relative">
 								<img
 									src={user.foto}
@@ -131,13 +132,13 @@ function AtualizarPerfil() {
 						{/* Seção do formulário */}
 						<div className="p-8 lg:p-12">
 							<div className="mb-8">
-								<h1 className="text-4xl font-bold text-gray-800 mb-2">Editar Perfil</h1>
-								<p className="text-gray-500">Atualize suas informações pessoais</p>
+								<h1 className="text-4xl font-bold text-fuchsia-900 mb-2">Editar Perfil</h1>
+								<p className="text-fuchsia-900">Atualize suas informações pessoais</p>
 							</div>
 
 							<form onSubmit={atualizarUsuario} className="space-y-6">
 								<div className="space-y-2">
-									<label htmlFor="nome" className="block text-sm font-semibold text-gray-700">
+									<label htmlFor="nome" className="block text-sm font-semibold text-fuchsia-900">
 										Nome Completo
 									</label>
 									<input
@@ -145,7 +146,7 @@ function AtualizarPerfil() {
 										id="nome"
 										name="nome"
 										placeholder="Digite seu nome completo"
-										className="w-full px-4 py-3 border-2 border-slate-700 rounded  focus:outline-none transition-colors"
+										className="w-full px-4 py-3 border-2 border-fuchsia-800 rounded focus:outline-none focus:border-fuchsia-600 transition-colors"
 										value={user.nome || ""}
 										onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 										required
@@ -153,7 +154,7 @@ function AtualizarPerfil() {
 								</div>
 
 								<div className="space-y-2">
-									<label htmlFor="usuario" className="block text-sm font-semibold text-gray-700">
+									<label htmlFor="usuario" className="block text-sm font-semibold text-fuchsia-900">
 										E-mail
 									</label>
 									<input
@@ -161,7 +162,7 @@ function AtualizarPerfil() {
 										id="usuario"
 										name="usuario"
 										placeholder="seu@email.com"
-										className="w-full px-4 py-3 border-2 border-gray-200 rounded bg-gray-50 cursor-not-allowed"
+										className="w-full px-4 py-3 border-2 border-rose-300 rounded bg-rose-50 cursor-not-allowed"
 										disabled
 										value={user.usuario || ""}
 										onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -170,7 +171,7 @@ function AtualizarPerfil() {
 								</div>
 
 								<div className="space-y-2">
-									<label htmlFor="foto" className="block text-sm font-semibold text-gray-700">
+									<label htmlFor="foto" className="block text-sm font-semibold text-fuchsia-900">
 										URL da Foto de Perfil
 									</label>
 									<input
@@ -178,7 +179,7 @@ function AtualizarPerfil() {
 										id="foto"
 										name="foto"
 										placeholder="https://exemplo.com/foto.jpg"
-										className="w-full px-4 py-3 border-2 border-slate-700 rounded  focus:outline-none transition-colors"
+										className="w-full px-4 py-3 border-2 border-fuchsia-800 rounded focus:outline-none"
 										value={user.foto || ""}
 										onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 										required
@@ -186,7 +187,7 @@ function AtualizarPerfil() {
 								</div>
 
 								<div className="space-y-2">
-									<label htmlFor="senha" className="block text-sm font-semibold text-gray-700">
+									<label htmlFor="senha" className="block text-sm font-semibold text-fuchsia-900">
 										Nova Senha
 									</label>
 									<input
@@ -194,7 +195,7 @@ function AtualizarPerfil() {
 										id="senha"
 										name="senha"
 										placeholder="Mínimo 8 caracteres"
-										className="w-full px-4 py-3 border-2 border-slate-700 rounded  focus:outline-none transition-colors"
+										className="w-full px-4 py-3 border-2 border-fuchsia-800 rounded focus:outline-none"
 										value={user.senha || ""}
 										onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 										required
@@ -203,7 +204,7 @@ function AtualizarPerfil() {
 								</div>
 
 								<div className="space-y-2">
-									<label htmlFor="confirmarSenha" className="block text-sm font-semibold text-gray-700">
+									<label htmlFor="confirmarSenha" className="block text-sm font-semibold text-fuchsia-900">
 										Confirmar Nova Senha
 									</label>
 									<input
@@ -211,7 +212,7 @@ function AtualizarPerfil() {
 										id="confirmarSenha"
 										name="confirmarSenha"
 										placeholder="Digite a senha novamente"
-										className="w-full px-4 py-3 border-2 border-slate-700 rounded  focus:outline-none transition-colors"
+										className="w-full px-4 py-3 border-2 border-fuchsia-800 rounded focus:outline-none"
 										value={confirmarSenha}
 										onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
 										required
@@ -222,14 +223,14 @@ function AtualizarPerfil() {
 								<div className="flex flex-col sm:flex-row gap-4 pt-4">
 									<button
 										type="button"
-										className="flex-1 px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors"
+										className="flex-1 px-6 py-3 bg-gradient-to-r from-rose-300 to-fuchsia-800 text-white font-semibold rounded-xl hover:from-fuchsia-800 hover:to-rose-300 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
 										onClick={retornar}
 									>
 										Cancelar
 									</button>
 									<button
 										type="submit"
-										className="flex-1 px-6 py-3 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-semibold rounded-xl hover:from-indigo-700 hover:to-indigo-800 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+										className="flex-1 px-6 py-3 bg-gradient-to-r from-fuchsia-800 to-rose-600 text-white font-semibold rounded-xl hover:from-rose-600 hover:to-fuchsia-900 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
 										disabled={isLoading}
 									>
 										{isLoading ? (

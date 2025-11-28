@@ -12,14 +12,14 @@ function Navbar() {
 
         handleLogout()
         ToastAlert('O Usuário foi desconectado com sucesso!', 'info')
-        navigate('/')
+        setTimeout(() => navigate('/'), 100);
     }
 
     let component: ReactNode
 
     if (usuario.token !== "") {
         component = (
-            <div className="w-full flex justify-center pt-10 bg-fuchsia-950 text-white border-b border-fuchsia-300" >
+            <div className="w-full flex justify-center pt-10 bg-fuchsia-950 text-fuchsia-100 border-b border-fuchsia-300" >
 
                 <div className="container flex justify-between text-lg mx-6">
                     <Link to="/home" className="text-2xl font-bold uppercase">Blog Pessoal </Link>

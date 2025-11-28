@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import type UsuarioLogin from "../../models/UsuarioLogin"
 import { AuthContext } from "../../contexts/AuthContext"
 import { ClipLoader } from "react-spinners"
+import minhaImagem from "../../assets/homeblog2.png"
 
 function Login() {
   const navigate = useNavigate()
@@ -32,7 +33,7 @@ function Login() {
 console.log(JSON.stringify(usuarioLogin));
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-fuchsia-50">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-rose-50">
         <form className="flex justify-center items-center flex-col w-1/2 gap-4 text-fuchsia-950"
           onSubmit={login}
         >
@@ -79,15 +80,15 @@ console.log(JSON.stringify(usuarioLogin));
 
           <p>
             Ainda não tem uma conta?{" "}
-            <Link to="/cadastro" className="text-fu hover:underline hover:text-blue-900">
+            <Link to="/cadastro" className="text-fu hover:underline hover:text-blue-700">
               Cadastre-se
             </Link>
           </p>
         </form>
-        <div
-className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat 
-                            w-full min-h-screen bg-cover bg-center"
-        ></div>
+          <div
+            style={{ backgroundImage: `url(${minhaImagem})` }}
+            className="lg:block hidden bg-no-repeat w-full min-h-screen bg-cover bg-center"
+          ></div>
       </div>
   )
 }

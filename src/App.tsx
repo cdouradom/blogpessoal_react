@@ -19,8 +19,8 @@ import AtualizarPerfil from './pages/perfil/AtualizarPerfil';
 function App() {
 	return (
 		<AuthProvider>
-			<ToastContainer />
 			<BrowserRouter>
+				<ToastContainer />
 				<Navbar />
 				<div className="min-h-[80vh]">
 					<Routes>

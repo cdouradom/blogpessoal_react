@@ -63,15 +63,15 @@ function DeletarTema() {
     }
 
     return (
-        <div className="container w-1/3 mx-auto">
-            <h1 className="text-4xl text-center my-4">Deletar Tema</h1>
-            <p className="text-center font-semibold mb-4">Você tem certeza de que deseja apagar o tema a seguir?</p>
-            <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-                <header className="py-2 px-6 bg-indigo-600 text-white font-bold text-2xl">Tema</header>
-                <p className="p-8 text-3xl bg-slate-200 h-full">{tema.descricao}</p>
+        <div className="container max-w-lg mx-auto bg-rose-50 p-4 rounded-xl shadow-md">
+            <h1 className="text-4xl text-center my-4 text-fuchsia-900">Deletar Tema</h1>
+            <p className="text-center font-semibold text-fuchsia-900 mb-4">Você tem certeza de que deseja apagar o tema a seguir?</p>
+            <div className='border border-fuchsia-200 bg-white flex flex-col rounded-2xl overflow-hidden justify-between'>
+                <header className='py-2 px-6 bg-fuchsia-900 text-rose-100 font-bold text-2xl'> Tema</header>
+                <p className="p-8 text-3xl text-fuchsia-900 h-full">{tema.descricao}</p>
                 <div className="flex">
-                    <button className="text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2" onClick={retornar}>Não</button>
-                    <button className="w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center" onClick={deletarTema}>
+                    <button className='text-rose-100  bg-rose-600 hover:bg-rose-400 w-full py-2' onClick={retornar}>Não</button>
+                    <button className='w-full text-rose-100  bg-fuchsia-700 hover:bg-fuchsia-500 flex items-center justify-center' onClick={deletarTema}>
                         {
                             isLoading ?
                                 <ClipLoader

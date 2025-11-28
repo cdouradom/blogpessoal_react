@@ -53,19 +53,19 @@ function ListaTemas() {
                 isLoading && (
                     <div className="flex justify-center w-full my-8">
                         <SyncLoader
-                            color="#312e81"
-                            size={32}
+                            color="#c9747c"
+                            size={24}
                         />
                     </div>
                 )
             }
 
-            <div className="flex justify-center w-full px-4 my-4">
-                <div className="container flex flex-col">
+            <div className="flex justify-center w-full px-4 my-4 bg-rose-50">
+                <div className="container flex flex-col bg-rose-50">
 
                     {
                        (!isLoading && temas.length === 0) &&(
-                            <span className="text-3xl text-center my-8">
+                            <span className="text-3xl text-center my-8 text-rose-900">
                                 Nenhum Tema foi encontrado!
                             </span>
                        )

@@ -50,6 +50,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             foto: "",
             token: ""
         });
+            ToastAlert("Usuário desconectado!", "info")
     }
 
     return (
